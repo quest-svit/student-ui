@@ -1,0 +1,38 @@
+<div>
+  <form id="form_42613" class="appnitro"  method="post" action="">
+    <div class="form_description">
+      <h2>Student Registration Form</h2>
+      <p>Register students using this form </p>
+    </div>
+
+    <div *ngIf="error"><p class="error">All fields are Mandatory</p></div>
+    <ul >
+      <li id="li_1" >
+      <label class="description" for="element_1">Name </label>
+      <div>
+        <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" [(ngModel)]="nameValue"/> 
+      </div> 
+      </li>		
+      
+      <li id="li_2" >
+      <label class="description" for="element_2">Age </label>
+      <div>
+        <input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" [(ngModel)]="ageValue"/> 
+      </div> 
+      </li>		
+      
+      <li id="li_3" >
+      <label class="description" for="element_3">Registration Number </label>
+      <div>
+        <input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" [(ngModel)]="regNumValue"/> 
+      </div> 
+      </li>
+
+      <li class="buttons">
+        <input type="hidden" name="form_id" value="42613" />        
+        <button id="registerButton" class="button_text" (click)="onSubmit()">Register</button>
+      </li>
+    </ul>
+  </form>	
+</div>
+<div *ngIf="status.status"><p>Registration Status {{status.status}}</p></div>

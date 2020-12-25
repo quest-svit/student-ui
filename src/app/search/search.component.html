@@ -1,0 +1,51 @@
+<div>
+  <form id="form_42613" class="appnitro"  method="post" action="">
+    <div class="form_description">
+      <h2>Student Search Form</h2>
+      <p>Search students using this form </p>
+    </div>						
+    <ul >
+    
+      <li id="li_1" >
+      <label class="description" for="element_1">Name </label>
+      <div>
+      <input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" [(ngModel)]="nameValue"/> 
+      <button id="clearNameButton" class="button_text" (click)="clearName()">Clear</button>
+      </div> 
+      </li>		
+      
+      <li id="li_2" >
+      <label class="description" for="element_2">Age </label>
+      <div>
+      <input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" [(ngModel)]="ageValue"/> 
+      <button id="clearAgeButton" class="button_text" (click)="clearAge()">Clear</button>
+      </div> 
+      </li>		
+
+      <li id="li_3" >
+      <label class="description" for="element_3">Registration Number </label>
+      <div>
+      <input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" [(ngModel)]="regNumValue"/> 
+      <button id="clearRegNumButton" class="button_text" (click)="clearRegNumValue()">Clear</button>
+      </div> 
+      </li>
+    
+      <li class="buttons">
+      <input type="hidden" name="form_id" value="42613" />
+      <button id="searchButton" class="button_text" (click)="onSearch()">Search</button>
+      </li>
+    </ul>
+  </form>	
+  <hr>
+    <h3>Search Results</h3>
+    <div class="results" >
+      <table border="1px" background-color = "rgb(243, 240, 240)">
+        <thead><th>Name</th><th>Age</th><th>Registration Number</th></thead>
+        <tr *ngFor="let student of searchResults">
+          <td>{{student.name}}</td><td>{{student.age}}</td><td>{{student.registrationNumber}}</td>
+        </tr>
+      
+      </table>
+    </div>
+  </div>
+  
